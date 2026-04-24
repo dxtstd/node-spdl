@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Lightweight Spotify downloader and API wrapper.",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    "require": "./dist/cjs/index.js",
-    "import": "./dist/esm/index.js"
+    "require": "./dist/index.js",
+    "import": "./dist/index.js"
   },
   "files": [
     "dist",
