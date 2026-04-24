@@ -3,8 +3,6 @@
 		"target": "ESNext",
 		"module": "ESNext",
 		"rootDir": "./src",
-		"moduleResolution": "Node",
-		"baseUrl": "./src",
 		"declaration": true,
 		"outDir": "./dist",
 		"declarationDir": "./dist/types",

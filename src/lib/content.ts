@@ -1,5 +1,5 @@
 import { PassThrough, pipeline, Readable, Writable } from "node:stream";
-import { decryptStream } from "shifro";
+import * as shifro from "shifro";
 import undici from "undici";
 
 import { Spotify } from "./client.js";
@@ -111,11 +111,19 @@ export class CDNStreamer {
                     stream.push(segment);
                 }
 
-                return decryptStream(
-                    Readable.toWeb(stream) as ReadableStream,
-                    Writable.toWeb(this.stream),
-                    { key }
-                );
+                const decrypt = async () => {
+                    const decryption = await shifro.Decryption.init({
+                        input: new shifro.Input({
+                            source: new shifro.ReadableStreamSource(Readable.toWeb(stream) as ReadableStream),
+                            keys: new Map<shifro.KeyId, shifro.Key>([key.split(":") as [shifro.KeyId, shifro.Key]])
+                        }),
+                        output: new shifro.Output({
+                            target: new shifro.StreamTarget(Writable.toWeb(this.stream))
+                        })
+                    })
+                }
+
+                return decrypt();
             } catch (error) {
                 this.stream.destroy(error as any);
             }
