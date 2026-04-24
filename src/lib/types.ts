@@ -1,4 +1,4 @@
-import fs from "node:fs";
+import fs from "fs";
 import { Spotify } from "./client.js";
 
 // spdl Types

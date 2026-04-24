@@ -16,8 +16,8 @@
     "package.json"
   ],
   "scripts": {
-    "dev": "tsup src/index.ts --dts --format esm,cjs --watch",
-    "build": "tsup src/index.ts --dts --format esm,cjs"
+    "dev": "tsup src/index.ts --dts-resolve --format esm,cjs --watch",
+    "build": "tsup src/index.ts --dts-resolve --format esm,cjs"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
-import os from "node:os";
-import { PassThrough, Readable } from "node:stream";
+import os from "os";
+import { PassThrough, Readable } from "stream";
 import undici from "undici";
 import unplayplay from "@spdl/unplayplay";
 

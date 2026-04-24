@@ -1,7 +1,7 @@
 import {
     PassThrough,
     Readable
-} from "node:stream";
+} from "stream";
 
 import { Spotify } from "./client.js";
 import { Endpoints, Formats, AudioType, premiumFormats } from "./const.js";

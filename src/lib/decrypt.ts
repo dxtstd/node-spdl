@@ -1,5 +1,5 @@
-import { createDecipheriv } from "node:crypto";
-import { Transform, TransformCallback } from "node:stream";
+import { createDecipheriv } from "crypto";
+import { Transform, TransformCallback } from "stream";
 
 const NONCE = Buffer.from("72e067fbddcbcf77", "hex");
 const COUNTER = Buffer.from("ebe8bc643f630d93", "hex");
